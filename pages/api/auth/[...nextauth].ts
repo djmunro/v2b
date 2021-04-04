@@ -3,12 +3,8 @@ import Providers from "next-auth/providers";
 import Adapters from "next-auth/adapters";
 
 import { NextApiHandler } from "next";
-import { PrismaClient } from "@prisma/client";
 
 import prisma from "../../db";
-
-const authHandler: NextApiHandler = (req, res) => NextAuth(req, res, options);
-export default authHandler;
 
 const options = {
   providers: [
@@ -28,10 +24,10 @@ const options = {
       from: process.env.SMTP_FROM,
     }),
   ],
-  // @ts-ignore
-  adapter: Adapters.Prisma.Adapter({
-    prisma,
-  }),
-
+  adapter: Adapters.Prisma.Adapter({ prisma }),
   secret: process.env.SECRET,
 };
+
+const authHandler: NextApiHandler = (req, res) => NextAuth(req, res, options);
+
+export default authHandler;
