@@ -6,6 +6,9 @@ import { NextApiHandler } from "next";
 
 import prisma from "../../db";
 
+const authHandler: NextApiHandler = (req, res) => NextAuth(req, res, options);
+export default authHandler;
+
 const options = {
   providers: [
     Providers.GitHub({
@@ -27,7 +30,3 @@ const options = {
   adapter: Adapters.Prisma.Adapter({ prisma }),
   secret: process.env.SECRET,
 };
-
-const authHandler: NextApiHandler = (req, res) => NextAuth(req, res, options);
-
-export default authHandler;
