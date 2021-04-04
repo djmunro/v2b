@@ -17,11 +17,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "paths": {
-      "*": [
-        "./types/*"
-      ]
-    }
   },
   "include": [
     "next-env.d.ts",
