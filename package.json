@@ -10,7 +10,7 @@
     "vercel-build": "prisma migrate deploy && next build",
     "db:reset": "dotenv-flow -- npx prisma migrate reset --preview-feature",
     "db:migrate": "dotenv-flow -- npx prisma migrate dev --preview-feature",
-    "db:deploy": "dotenv-flow -- npx prisma migrate deploy --preview-feature",
+    "db:deploy": "dotenv-flow -- npx prisma migrate deploy --preview-feature"
   },
   "keywords": [],
   "author": "David Munro",
