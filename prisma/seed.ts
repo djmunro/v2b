@@ -1,7 +1,6 @@
 import faker from "faker";
-import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+import prisma from "../lib/db";
 
 async function main() {
   const users = [...new Array(5)].map(() => {

@@ -50,7 +50,7 @@ model User {
   image         String?
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   updatedAt     DateTime  @default(now()) @map(name: "updated_at")
-  build         Build[]
+  builds        Build[]
 
   @@map(name: "users")
 }
