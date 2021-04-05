@@ -1,6 +1,6 @@
 import faker from "faker";
 
-import prisma from "../lib/db";
+import prisma from "lib/db";
 
 async function main() {
   const users = [...new Array(5)].map(() => {
@@ -31,4 +31,4 @@ main()
     console.error(e);
     process.exit(1);
   })
-  .finally(async () => prisma.$disconnect);
+  .finally(() => prisma.$disconnect);
