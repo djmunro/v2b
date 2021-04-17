@@ -1,25 +1,27 @@
 import { signIn, signOut, useSession } from "next-auth/client";
 
+import { Layout } from "components/Layout";
+
 const IndexPage = () => {
   const [session, loading] = useSession();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Layout>Loading...</Layout>;
   }
 
   if (session) {
     return (
-      <div>
+      <Layout>
         Hello, {session.user.email ?? session.user.name} <br />
         <button onClick={() => signOut()}>Sign out</button>
-      </div>
+      </Layout>
     );
   } else {
     return (
-      <div>
+      <Layout>
         You are not logged in! <br />
         <button onClick={() => signIn()}>Sign in</button>
-      </div>
+      </Layout>
     );
   }
 };
