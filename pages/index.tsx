@@ -1,29 +1,31 @@
 import { signIn, signOut, useSession } from "next-auth/client";
 
-import { Layout } from "components/Layout";
+import { getLayout } from "components/SiteLayout";
 
 const IndexPage = () => {
   const [session, loading] = useSession();
 
   if (loading) {
-    return <Layout>Loading...</Layout>;
+    return <div>Loading...</div>;
   }
 
   if (session) {
     return (
-      <Layout>
+      <div>
         Hello, {session.user.email ?? session.user.name} <br />
         <button onClick={() => signOut()}>Sign out</button>
-      </Layout>
+      </div>
     );
   } else {
     return (
-      <Layout>
+      <div>
         You are not logged in! <br />
         <button onClick={() => signIn()}>Sign in</button>
-      </Layout>
+      </div>
     );
   }
 };
+
+IndexPage.getLayout = getLayout;
 
 export default IndexPage;
