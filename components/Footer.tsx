@@ -12,12 +12,10 @@ export default function Footer({}: Props): ReactElement {
       justifyContent="center"
       alignItems="center"
     >
-      <sup>
-        Made with 🤙 by{" "}
-        <a href="https://twitter.com/munrod86" target="_blank">
-          @munrod86
-        </a>
-      </sup>
+      Made with 🤙 by{" "}
+      <a href="https://twitter.com/munrod86" target="_blank">
+        @munrod86
+      </a>
     </Box>
   );
 }
