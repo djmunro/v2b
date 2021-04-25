@@ -1,5 +1,6 @@
 import React from "react";
 
+import Footer from "./Footer";
 import Navbar from "./menu/Navbar";
 
 export const SiteLayout = ({ children }) => {
@@ -7,14 +8,7 @@ export const SiteLayout = ({ children }) => {
     <>
       <Navbar />
       <main>{children}</main>
-      <footer>
-        <hr />
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-        </ul>
-      </footer>
+      <Footer />
     </>
   );
 };
