@@ -11,6 +11,7 @@ export default function Footer({}: Props): ReactElement {
       direction="column"
       justifyContent="center"
       alignItems="center"
+      m={4}
     >
       Made with 🤙 by{" "}
       <a href="https://twitter.com/munrod86" target="_blank">

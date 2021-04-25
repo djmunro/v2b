@@ -9,7 +9,7 @@ export const SiteLayout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Container>{children}</Container>
+      <Container maxW="container.lg">{children}</Container>
       <Footer />
     </>
   );
